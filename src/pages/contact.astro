@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { contactEmail } from '../site-config';
+---
+
+<Layout
+  title="Contact | Alamo Agents"
+  description="Get in touch with Alamo Agents, a monthly San Antonio meetup for people building AI agent systems."
+>
+  <section class="page-hero on-light">
+    <div class="wrap reveal">
+      <p class="eyebrow">Contact</p>
+      <h1>Say hello.</h1>
+      <p class="lede">
+        Questions about the meetup, want to demo, or interested in sponsoring or hosting a
+        gathering? Reach out directly.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap reveal">
+      <div class="card contact-card">
+        <h3>Email us</h3>
+        <p>We read every message and reply as soon as we can.</p>
+        <a class="btn btn-solid" href={`mailto:${contactEmail}`}>{contactEmail}</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .contact-card {
+    max-width: 46ch;
+  }
+
+  .contact-card p {
+    margin-bottom: 24px;
+  }
+</style>
