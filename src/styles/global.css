@@ -596,15 +596,6 @@ footer.foot .foot-top p {
   color: var(--ink-soft);
 }
 
-footer.foot .foot-kicker {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin: 0;
-}
-
 footer.foot .foot-bottom {
   margin-top: 40px;
   padding-top: 22px;
