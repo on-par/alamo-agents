@@ -533,16 +533,6 @@ section h2 {
   gap: 8px;
 }
 
-.join-note {
-  font-size: 0.86rem;
-  color: var(--ink-faint);
-  margin: 14px 0 0;
-}
-
-.on-light .join-note {
-  color: var(--ink-on-light-faint);
-}
-
 /* Footer */
 
 footer.foot {

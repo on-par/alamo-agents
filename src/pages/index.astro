@@ -3,8 +3,7 @@ import '../styles/global.css';
 import { Image } from 'astro:assets';
 import archMark from '../assets/arch-mark.png';
 
-const email = 'hello@alamoagents.org';
-const lumaUrl = null; // TODO: set once the Luma event page exists
+const lumaUrl = null; // TODO: set once the Luma event page exists — RSVP CTAs stay hidden until then
 
 const nav = [
   { href: '#about', label: 'About' },
@@ -58,7 +57,13 @@ const pillars = [
         </button>
         <nav class="nav" id="primary-nav" aria-label="Primary">
           {nav.map((item) => <a href={item.href}>{item.label}</a>)}
-          <a class="nav-cta" href={`mailto:${email}?subject=Alamo%20Agents%20-%20notify%20me`}>Join</a>
+          {
+            lumaUrl && (
+              <a class="nav-cta" href={lumaUrl}>
+                RSVP
+              </a>
+            )
+          }
         </nav>
       </div>
     </header>
@@ -78,17 +83,15 @@ const pillars = [
             </p>
             <div class="hero-actions">
               {
-                lumaUrl ? (
+                lumaUrl && (
                   <a class="btn btn-solid" href={lumaUrl}>
                     RSVP on Luma
                   </a>
-                ) : (
-                  <a class="btn btn-solid" href={`mailto:${email}?subject=Alamo%20Agents%20-%20notify%20me`}>
-                    Get notified when RSVPs open
-                  </a>
                 )
               }
-              <a class="btn" href="#about">About the community</a>
+              <a class={lumaUrl ? 'btn' : 'btn btn-solid'} href="#about">
+                About the community
+              </a>
             </div>
           </div>
           <div class="diagram-card reveal" aria-hidden="true">
@@ -149,14 +152,24 @@ const pillars = [
           <p class="eyebrow">Join</p>
           <div class="join-panel">
             <h2>Become part of the founding community shaping AI engineering in Texas.</h2>
-            <p class="lede">
-              We are locking in a San Antonio venue for the inaugural meetup. Join the mailing
-              list to receive an invitation the moment RSVPs open.
-            </p>
-            <a class="btn btn-solid" href={`mailto:${email}?subject=Alamo%20Agents%20-%20notify%20me`}>
-              Join the mailing list
-            </a>
-            <p class="join-note">Or reach us directly at {email}</p>
+            {
+              lumaUrl ? (
+                <>
+                  <p class="lede">
+                    We are locking in a San Antonio venue for the inaugural meetup. RSVP below to
+                    save your seat.
+                  </p>
+                  <a class="btn btn-solid" href={lumaUrl}>
+                    RSVP on Luma
+                  </a>
+                </>
+              ) : (
+                <p class="lede">
+                  We are locking in a San Antonio venue and an RSVP link for the inaugural
+                  meetup. Details land here first — check back soon.
+                </p>
+              )
+            }
           </div>
         </div>
       </section>
