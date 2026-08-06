@@ -163,13 +163,21 @@ header .mark {
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
-header .mark img {
+.mark-icon {
   display: block;
-  height: 22px;
+  height: 24px;
   width: auto;
+}
+
+.mark-text {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
 }
 
 header .mark .sub {
@@ -550,10 +558,18 @@ footer.foot .foot-top {
 }
 
 footer.foot .foot-mark {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 14px;
+}
+
+footer.foot .foot-mark .mark-icon {
   height: 20px;
-  width: auto;
-  display: block;
-  margin-bottom: 12px;
+}
+
+footer.foot .foot-mark .mark-text {
+  font-size: 0.92rem;
 }
 
 footer.foot .foot-top p {
