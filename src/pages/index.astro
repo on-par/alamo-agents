@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 
-const email = 'hello@alamo-agents.dev';
+const email = 'hello@alamoagents.org';
 const lumaUrl = null; // TODO: set once the Luma event page exists
 
 const nav = [
@@ -58,6 +58,25 @@ const pillars = [
 
     <main id="top">
       <section class="hero">
+        <svg class="arch" viewBox="0 0 420 420" fill="none" aria-hidden="true">
+          <path
+            d="M40 420V220C40 180 55 140 90 115C110 100 135 90 160 90C175 60 200 40 210 40C220 40 245 60 260 90C285 90 310 100 330 115C365 140 380 180 380 220V420"
+            stroke="url(#archGradient)"
+            stroke-width="1.5"
+          ></path>
+          <path
+            d="M75 420V240C75 205 88 175 115 155C130 144 148 137 165 135"
+            stroke="url(#archGradient)"
+            stroke-width="1"
+            opacity="0.5"
+          ></path>
+          <defs>
+            <linearGradient id="archGradient" x1="40" y1="40" x2="380" y2="420" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#7c6cf6"></stop>
+              <stop offset="1" stop-color="#d9713c"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
         <div class="wrap">
           <div class="hero-copy">
             <p class="eyebrow">San Antonio, Texas · Monthly meetup</p>
