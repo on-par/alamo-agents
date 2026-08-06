@@ -1,0 +1,73 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import patrickHeadshot from '../assets/patrick-headshot.jpg';
+---
+
+<Layout
+  title="About | Alamo Agents"
+  description="Why Alamo Agents exists, and who's building it."
+>
+  <section class="page-hero on-light">
+    <div class="wrap reveal">
+      <p class="eyebrow">About</p>
+      <h1>Agents, out loud, in a room.</h1>
+      <p class="lede">
+        Most breakthroughs don't happen alone. They happen because someone showed their terminal,
+        their notebook, their late-night debugging session to another builder who pushed back on
+        it. Alamo Agents is that room: show up, demo what you're building, compare notes, and
+        leave with better ideas than you walked in with.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap founder-wrap reveal">
+      <Image class="founder-avatar" src={patrickHeadshot} alt="Patrick Robinson" width={176} height={176} />
+      <div>
+        <p class="eyebrow">Who's behind this</p>
+        <h2>I'm building this to get people in a room, not just a feed.</h2>
+        <p class="lede">
+          I'm Patrick, a software consultant at Lean TECHniques based here in San Antonio. Most
+          of my work these days is agent systems: multi-agent frameworks, AI-assisted developer
+          tools, the stuff that's changing how software gets built. I'm trying to get the people
+          doing that work in the same room, on purpose, on a regular basis, instead of trading
+          screenshots online. San Antonio has the engineers and the founders doing this work. I'm
+          building the room where they show up together.
+        </p>
+        <p class="lede">
+          Questions, ideas, want to help host? Reach me directly at{' '}
+          <a href="mailto:patrick@onpardev.com">patrick@onpardev.com</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .founder-wrap {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  @media (max-width: 640px) {
+    .founder-wrap {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .founder-avatar {
+    width: 88px;
+    height: 88px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(17, 19, 21, 0.14);
+  }
+
+  .lede + .lede {
+    margin-top: 14px;
+  }
+</style>
