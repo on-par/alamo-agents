@@ -1,8 +1,6 @@
 ---
-import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import { lumaUrl } from '../site-config';
-import heroArch from '../assets/hero-arch.png';
 
 const pillars = [
   {
@@ -49,7 +47,22 @@ const pillars = [
         </div>
       </div>
       <div class="diagram-card reveal" aria-hidden="true">
-        <Image src={heroArch} alt="" class="hero-arch" />
+        <svg viewBox="0 0 480 260" role="img">
+          <path class="diagram-flow" d="M75 150 C 130 130, 170 118, 240 110 S 360 122, 405 135" />
+          <path class="diagram-pulse" d="M75 150 C 130 130, 170 118, 240 110 S 360 122, 405 135" />
+
+          <rect class="diagram-monolith" x="50" y="150" width="50" height="70" rx="4"></rect>
+          <circle class="diagram-orb n1" cx="75" cy="140"></circle>
+          <text class="diagram-label" x="75" y="243" text-anchor="middle">Plan</text>
+
+          <rect class="diagram-monolith is-accent" x="215" y="110" width="50" height="110" rx="4"></rect>
+          <circle class="diagram-orb n2" cx="240" cy="100"></circle>
+          <text class="diagram-label" x="240" y="243" text-anchor="middle">Execute</text>
+
+          <rect class="diagram-monolith" x="380" y="135" width="50" height="85" rx="4"></rect>
+          <circle class="diagram-orb n3" cx="405" cy="125"></circle>
+          <text class="diagram-label" x="405" y="243" text-anchor="middle">Review</text>
+        </svg>
       </div>
     </div>
   </section>
