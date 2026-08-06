@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import { Image } from 'astro:assets';
-import logoWordmark from '../assets/logo-wordmark.png';
+import archMark from '../assets/arch-mark.png';
 
 const email = 'hello@alamoagents.org';
 const lumaUrl = null; // TODO: set once the Luma event page exists
@@ -49,7 +49,8 @@ const pillars = [
     <header class="site-head">
       <div class="wrap head-inner">
         <a class="mark" href="#top">
-          <Image src={logoWordmark} alt="Alamo Agents" height={22} />
+          <Image class="mark-icon" src={archMark} alt="" height={24} />
+          <span class="mark-text">Alamo Agents</span>
           <span class="sub">Texas</span>
         </a>
         <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">
@@ -165,7 +166,10 @@ const pillars = [
       <div class="wrap">
         <div class="foot-top">
           <div>
-            <Image src={logoWordmark} alt="Alamo Agents" height={22} class="foot-mark" />
+            <div class="foot-mark">
+              <Image class="mark-icon" src={archMark} alt="" height={22} />
+              <span class="mark-text">Alamo Agents</span>
+            </div>
             <p>The home for builders creating AI agent systems in Texas.</p>
           </div>
           <p class="foot-kicker">Craft. Rigor. Community.</p>
