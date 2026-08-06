@@ -159,6 +159,7 @@ nav.nav a:hover {
     top: 100%;
     left: 0;
     right: 0;
+    z-index: 30;
     flex-direction: column;
     gap: 0;
     background: var(--near-black);
