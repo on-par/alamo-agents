@@ -46,7 +46,10 @@ const pillars = [
   <body>
     <header class="site-head">
       <div class="wrap head-inner">
-        <a class="mark" href="#top">Alamo Agents</a>
+        <a class="mark" href="#top">
+          Alamo Agents
+          <span class="sub">San Antonio, TX</span>
+        </a>
         <nav class="nav" aria-label="Primary">
           {nav.map((item) => <a href={item.href}>{item.label}</a>)}
         </nav>
@@ -54,30 +57,50 @@ const pillars = [
     </header>
 
     <main id="top">
-      <section class="hero dark">
+      <section class="hero">
         <div class="wrap">
-          <p class="eyebrow">San Antonio, Texas</p>
-          <h1>A monthly meetup for people building <em>with</em> agents.</h1>
-          <p class="lede">
-            Alamo Agents brings together builders, tinkerers and the AI-curious to share what
-            they are making with agents and agent workflows. Inaugural meetup: September 2026.
-          </p>
-          {
-            lumaUrl ? (
-              <a class="btn btn-solid" href={lumaUrl}>
-                RSVP on Luma
-              </a>
-            ) : (
-              <a class="btn btn-solid" href={`mailto:${email}?subject=Alamo%20Agents%20-%20notify%20me`}>
-                Get notified when RSVPs open
-              </a>
-            )
-          }
-          <a class="btn" href="#about">What is this</a>
+          <div class="hero-copy">
+            <p class="eyebrow">San Antonio, Texas · Monthly meetup</p>
+            <h1>
+              Build <span class="accent">with</span> agents. In a room, with other people.
+            </h1>
+            <p class="lede">
+              Alamo Agents brings together builders, tinkerers and the AI-curious to share what
+              they are making with agents and agent workflows. Inaugural meetup: September 2026.
+            </p>
+            {
+              lumaUrl ? (
+                <a class="btn btn-solid" href={lumaUrl}>
+                  RSVP on Luma
+                </a>
+              ) : (
+                <a class="btn btn-solid" href={`mailto:${email}?subject=Alamo%20Agents%20-%20notify%20me`}>
+                  Get notified when RSVPs open
+                </a>
+              )
+            }
+            <a class="btn" href="#about">What is this</a>
+          </div>
+          <div class="code-card" aria-hidden="true">
+            <div class="code-head">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="code-file">meetup.config.ts</span>
+            </div>
+            <pre><span class="k">export const</span> meetup = {"{"}
+  name: <span class="s">'Alamo Agents'</span>,
+  city: <span class="s">'San Antonio, TX'</span>,
+  cadence: <span class="s">'monthly'</span>,
+  inaugural: <span class="s">'2026-09'</span>,
+  focus: [<span class="s">'agents'</span>, <span class="s">'workflows'</span>, <span class="s">'tools'</span>],
+  <span class="p">rsvp</span>: <span class="c">// coming soon</span>,
+{"}"};</pre>
+          </div>
         </div>
       </section>
 
-      <section id="about">
+      <section id="about" class="panel">
         <div class="wrap">
           <p class="eyebrow">About</p>
           <h2>Agents, out loud, in a room.</h2>
@@ -89,7 +112,7 @@ const pillars = [
         </div>
       </section>
 
-      <section id="expect" class="dark">
+      <section id="expect">
         <div class="wrap">
           <p class="eyebrow">What to expect</p>
           <h2>Show up, build, compare notes.</h2>
@@ -106,7 +129,7 @@ const pillars = [
         </div>
       </section>
 
-      <section id="join">
+      <section id="join" class="panel">
         <div class="wrap">
           <p class="eyebrow">Join</p>
           <h2>Location and RSVP link coming soon.</h2>
@@ -123,7 +146,13 @@ const pillars = [
 
     <footer class="foot">
       <div class="wrap">
-        <p>Alamo Agents &middot; San Antonio, Texas</p>
+        <div class="foot-top">
+          <div>
+            <strong>Alamo Agents</strong>
+            <span>A monthly meetup for people building with AI agents.</span>
+          </div>
+        </div>
+        <div class="foot-bottom">© 2026 Alamo Agents. San Antonio, Texas.</div>
       </div>
     </footer>
   </body>
