@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { lumaCalendarEmbedUrl } from '../site-config';
+---
+
+<Layout
+  title="Events | Alamo Agents"
+  description="Alamo Agents meets monthly in San Antonio, Texas. See upcoming gatherings and RSVP on Luma."
+>
+  <section class="page-hero on-light">
+    <div class="wrap reveal">
+      <p class="eyebrow">Events</p>
+      <h1>One gathering. Every month.</h1>
+      <p class="lede">
+        Alamo Agents meets monthly in San Antonio. Every gathering is small, in-person, and built
+        around real work — demos, not slide decks.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap reveal">
+      {
+        lumaCalendarEmbedUrl ? (
+          <div class="luma-embed">
+            <iframe
+              src={lumaCalendarEmbedUrl}
+              width="100%"
+              height="600"
+              frameborder="0"
+              allowfullscreen
+              title="Alamo Agents events calendar"
+            />
+          </div>
+        ) : (
+          <div class="card events-placeholder">
+            <h3>Calendar coming soon</h3>
+            <p>
+              We're setting up our Luma calendar so every gathering lives in one place. Once the
+              inaugural meetup is scheduled, it — and every one after it — will show up here
+              first.
+            </p>
+          </div>
+        )
+      }
+    </div>
+  </section>
+</Layout>

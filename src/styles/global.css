@@ -491,6 +491,34 @@ section h2 {
   }
 }
 
+.page-hero {
+  padding-bottom: 72px;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.4rem, 4.4vw, 3.4rem);
+  max-width: 20ch;
+}
+
+.luma-embed {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.luma-embed iframe {
+  display: block;
+  border: none;
+}
+
+.events-placeholder {
+  max-width: 46ch;
+}
+
+.events-placeholder p {
+  margin: 0;
+}
+
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
