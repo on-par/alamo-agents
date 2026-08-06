@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import { lumaUrl } from '../site-config';
+import heroArch from '../assets/hero-arch.png';
 
 const pillars = [
   {
@@ -20,8 +22,8 @@ const pillars = [
 
 <Layout
   title="Alamo Agents | Where Texas Builds Agent Systems"
-  description="A monthly San Antonio meetup for people building AI agent systems. First gathering September 2026."
-  ogDescription="A monthly San Antonio meetup for people building agent systems. No pitches, no fluff, just what you built and what you learned building it."
+  description="A San Antonio gathering for people building AI agent systems."
+  ogDescription="A San Antonio gathering for people building agent systems. No pitches, no fluff, just what you built and what you learned building it."
 >
   <section class="hero">
     <div class="wrap">
@@ -30,8 +32,8 @@ const pillars = [
           Where Texas <span class="accent">builds</span> agent systems.
         </h1>
         <p class="lede">
-          Alamo Agents is a monthly meetup for people building agent systems, workflows, and
-          tools. No pitches. No fluff. Just what you shipped and what you learned shipping it.
+          Alamo Agents is a gathering for people building agent systems, workflows, and tools. No
+          pitches. No fluff. Just what you shipped and what you learned shipping it.
         </p>
         <div class="hero-actions">
           {
@@ -47,22 +49,7 @@ const pillars = [
         </div>
       </div>
       <div class="diagram-card reveal" aria-hidden="true">
-        <svg viewBox="0 0 480 260" role="img">
-          <path class="diagram-flow" d="M75 150 C 130 130, 170 118, 240 110 S 360 122, 405 135" />
-          <path class="diagram-pulse" d="M75 150 C 130 130, 170 118, 240 110 S 360 122, 405 135" />
-
-          <rect class="diagram-monolith" x="50" y="150" width="50" height="70" rx="4"></rect>
-          <circle class="diagram-orb n1" cx="75" cy="140"></circle>
-          <text class="diagram-label" x="75" y="243" text-anchor="middle">Plan</text>
-
-          <rect class="diagram-monolith is-accent" x="215" y="110" width="50" height="110" rx="4"></rect>
-          <circle class="diagram-orb n2" cx="240" cy="100"></circle>
-          <text class="diagram-label" x="240" y="243" text-anchor="middle">Execute</text>
-
-          <rect class="diagram-monolith" x="380" y="135" width="50" height="85" rx="4"></rect>
-          <circle class="diagram-orb n3" cx="405" cy="125"></circle>
-          <text class="diagram-label" x="405" y="243" text-anchor="middle">Review</text>
-        </svg>
+        <Image src={heroArch} alt="" class="hero-arch" />
       </div>
     </div>
   </section>
@@ -74,9 +61,29 @@ const pillars = [
       <p class="lede">
         Most breakthroughs don't happen alone. They happen because someone showed their terminal,
         their notebook, their late-night debugging session to another builder who pushed back on
-        it. Alamo Agents is that room, every month: show up, demo what you're building, compare
-        notes, and leave with better ideas than you walked in with.
+        it. Alamo Agents is that room: show up, demo what you're building, compare notes, and
+        leave with better ideas than you walked in with.
       </p>
+    </div>
+  </section>
+
+  <section id="founder" class="on-light">
+    <div class="wrap founder-wrap reveal">
+      <div class="founder-avatar" aria-hidden="true">PR</div>
+      <div>
+        <p class="eyebrow">Who's behind this</p>
+        <h2>I'm building this to get people in a room, not just a feed.</h2>
+        <p class="lede">
+          I'm Patrick. I'm trying to get people building agent systems in the same room, on
+          purpose, on a regular basis, instead of trading screenshots online. San Antonio has the
+          engineers and the founders doing this work. It's never had a place where they show up
+          together.
+        </p>
+        <p class="lede">
+          Questions, ideas, want to help host? Reach me directly at{' '}
+          <a href="mailto:patrick@onpardev.com">patrick@onpardev.com</a>.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -118,8 +125,8 @@ const pillars = [
           ) : (
             <>
               <p class="lede">
-                We're nailing down a San Antonio venue for the inaugural September meetup. RSVP
-                link drops here first. Want to demo, sponsor, or just say hi in the meantime?
+                We're building this out in San Antonio. Event details land on Luma once they're
+                ready. Want to demo, sponsor, or just say hi before then?
               </p>
               <a class="btn btn-solid" href="/contact">
                 Get in touch
@@ -131,3 +138,38 @@ const pillars = [
     </div>
   </section>
 </Layout>
+
+<style>
+  .founder-wrap {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  @media (max-width: 640px) {
+    .founder-wrap {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .founder-avatar {
+    width: 88px;
+    height: 88px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--slate);
+    border: 1px solid rgba(17, 19, 21, 0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--ink-on-light-soft);
+  }
+
+  #founder .lede + .lede {
+    margin-top: 14px;
+  }
+</style>
