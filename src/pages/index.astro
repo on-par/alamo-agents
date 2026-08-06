@@ -1,0 +1,130 @@
+---
+import '../styles/global.css';
+
+const email = 'hello@alamo-agents.dev';
+const lumaUrl = null; // TODO: set once the Luma event page exists
+
+const nav = [
+  { href: '#about', label: 'About' },
+  { href: '#expect', label: 'What to expect' },
+  { href: '#join', label: 'Join' },
+];
+
+const pillars = [
+  {
+    title: 'Build together',
+    body: 'Bring what you are working on. Agents, workflows, tools, weird experiments. Show it, break it, improve it in the room.',
+  },
+  {
+    title: 'Learn from the room',
+    body: 'Short talks and demos from people actually shipping agent systems, not slide decks about the idea of them.',
+  },
+  {
+    title: 'Meet your people',
+    body: 'San Antonio has a growing pocket of builders working on agents. This is where you find them.',
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alamo Agents | San Antonio AI Agent Builders Meetup</title>
+    <meta
+      name="description"
+      content="Alamo Agents is a monthly San Antonio meetup for people building with and on AI agents. Inaugural meetup September 2026."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Alamo Agents" />
+    <meta
+      property="og:description"
+      content="A monthly San Antonio meetup for people building with and on AI agents."
+    />
+  </head>
+  <body>
+    <header class="site-head">
+      <div class="wrap head-inner">
+        <a class="mark" href="#top">Alamo Agents</a>
+        <nav class="nav" aria-label="Primary">
+          {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero dark">
+        <div class="wrap">
+          <p class="eyebrow">San Antonio, Texas</p>
+          <h1>A monthly meetup for people building <em>with</em> agents.</h1>
+          <p class="lede">
+            Alamo Agents brings together builders, tinkerers and the AI-curious to share what
+            they are making with agents and agent workflows. Inaugural meetup: September 2026.
+          </p>
+          {
+            lumaUrl ? (
+              <a class="btn btn-solid" href={lumaUrl}>
+                RSVP on Luma
+              </a>
+            ) : (
+              <a class="btn btn-solid" href={`mailto:${email}?subject=Alamo%20Agents%20-%20notify%20me`}>
+                Get notified when RSVPs open
+              </a>
+            )
+          }
+          <a class="btn" href="#about">What is this</a>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="wrap">
+          <p class="eyebrow">About</p>
+          <h2>Agents, out loud, in a room.</h2>
+          <p class="lede">
+            A lot of the best agent work right now happens alone, in a terminal, at 1am. Alamo
+            Agents is a monthly excuse to bring that work into a room, San Antonio style: no
+            pitch decks required, just what you built and what you learned building it.
+          </p>
+        </div>
+      </section>
+
+      <section id="expect" class="dark">
+        <div class="wrap">
+          <p class="eyebrow">What to expect</p>
+          <h2>Show up, build, compare notes.</h2>
+          <div class="grid-3">
+            {
+              pillars.map((p) => (
+                <div class="card">
+                  <h3>{p.title}</h3>
+                  <p>{p.body}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section id="join">
+        <div class="wrap">
+          <p class="eyebrow">Join</p>
+          <h2>Location and RSVP link coming soon.</h2>
+          <p class="lede">
+            We are locking in a San Antonio venue for the inaugural September 2026 meetup. Leave
+            your email and we will send the Luma link the moment it is live.
+          </p>
+          <a class="btn btn-solid" href={`mailto:${email}?subject=Alamo%20Agents%20-%20notify%20me`}>
+            {email}
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap">
+        <p>Alamo Agents &middot; San Antonio, Texas</p>
+      </div>
+    </footer>
+  </body>
+</html>

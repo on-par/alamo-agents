@@ -1,0 +1,151 @@
+@import '@fontsource/playfair-display/600.css';
+@import '@fontsource/playfair-display/600-italic.css';
+@import '@fontsource/dm-sans/400.css';
+@import '@fontsource/dm-sans/500.css';
+
+:root {
+  --ink: #16181d;
+  --paper: #f6f4ef;
+  --accent: #c96a3a;
+  --line: rgba(22, 24, 29, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  margin: 0 0 0.4em;
+}
+
+a {
+  color: inherit;
+}
+
+.wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin: 0 0 0.75em;
+}
+
+header.site-head {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+header .head-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .mark {
+  text-decoration: none;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+nav.nav {
+  display: flex;
+  gap: 24px;
+  font-size: 0.9rem;
+}
+
+nav.nav a {
+  text-decoration: none;
+}
+
+section {
+  padding: 72px 0;
+}
+
+section.dark {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+section.dark .eyebrow {
+  color: #e0a97e;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1.05;
+  margin-bottom: 0.5em;
+}
+
+.hero em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.lede {
+  font-size: 1.15rem;
+  max-width: 46ch;
+  opacity: 0.85;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 24px;
+  margin-right: 12px;
+}
+
+.btn-solid {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #16181d;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+}
+
+.card p {
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+footer.foot {
+  border-top: 1px solid var(--line);
+  padding: 32px 0;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
