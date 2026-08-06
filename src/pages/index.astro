@@ -1,14 +1,6 @@
 ---
-import '../styles/global.css';
-import { Image } from 'astro:assets';
-import archMark from '../assets/arch-mark.png';
-
-const lumaUrl = null; // TODO: set once the Luma event page exists — RSVP CTAs stay hidden until then
-
-const nav = [
-  { href: '#about', label: 'About' },
-  { href: '#expect', label: 'What to expect' },
-];
+import Layout from '../layouts/Layout.astro';
+import { lumaUrl } from '../site-config';
 
 const pillars = [
   {
@@ -26,214 +18,112 @@ const pillars = [
 ];
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Alamo Agents | Where Texas Builds Agent Systems</title>
-    <meta
-      name="description"
-      content="Alamo Agents is a monthly gathering for engineers, founders, researchers, and builders working at the frontier of AI systems. Inaugural meetup: September 2026, San Antonio."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Alamo Agents | Where Texas Builds Agent Systems" />
-    <meta
-      property="og:description"
-      content="A monthly gathering for serious AI builders in Texas. No sales pitches. No fluff. Just people shipping real work."
-    />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-  </head>
-  <body>
-    <header class="site-head">
-      <div class="wrap head-inner">
-        <a class="mark" href="#top">
-          <Image class="mark-icon" src={archMark} alt="" height={24} />
-          <span class="mark-text">Alamo Agents</span>
-          <span class="sub">Texas</span>
-        </a>
-        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
-        <nav class="nav" id="primary-nav" aria-label="Primary">
-          {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+<Layout
+  title="Alamo Agents | Where Texas Builds Agent Systems"
+  description="Alamo Agents is a monthly gathering for engineers, founders, researchers, and builders working at the frontier of AI systems. Inaugural meetup: September 2026, San Antonio."
+  ogDescription="A monthly gathering for serious AI builders in Texas. No sales pitches. No fluff. Just people shipping real work."
+>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy reveal">
+        <h1>
+          Where Texas <span class="accent">builds</span> agent systems.
+        </h1>
+        <p class="lede">
+          Alamo Agents is a monthly gathering of engineers, founders, researchers, consultants,
+          and builders exploring the frontier of AI systems. No sales pitches. No fluff. Just
+          people shipping real work.
+        </p>
+        <div class="hero-actions">
           {
             lumaUrl && (
-              <a class="nav-cta" href={lumaUrl}>
-                RSVP
+              <a class="btn btn-solid" href={lumaUrl}>
+                RSVP on Luma
               </a>
             )
           }
-        </nav>
+          <a class={lumaUrl ? 'btn' : 'btn btn-solid'} href="#about">
+            About the community
+          </a>
+        </div>
       </div>
-    </header>
+      <div class="diagram-card reveal" aria-hidden="true">
+        <svg viewBox="0 0 480 260" role="img">
+          <path class="diagram-flow" d="M75 150 C 130 130, 170 118, 240 110 S 360 122, 405 135" />
+          <path class="diagram-pulse" d="M75 150 C 130 130, 170 118, 240 110 S 360 122, 405 135" />
 
-    <main id="top">
-      <section class="hero">
-        <div class="wrap">
-          <div class="hero-copy reveal">
-            <h1>
-              Where Texas <span class="accent">builds</span> agent systems.
-            </h1>
-            <p class="lede">
-              Alamo Agents is a monthly gathering of engineers, founders, researchers,
-              consultants, and builders exploring the frontier of AI systems. No sales pitches.
-              No fluff. Just people shipping real work.
-            </p>
-            <div class="hero-actions">
-              {
-                lumaUrl && (
-                  <a class="btn btn-solid" href={lumaUrl}>
-                    RSVP on Luma
-                  </a>
-                )
-              }
-              <a class={lumaUrl ? 'btn' : 'btn btn-solid'} href="#about">
-                About the community
-              </a>
-            </div>
-          </div>
-          <div class="diagram-card reveal" aria-hidden="true">
-            <svg viewBox="0 0 480 260" role="img">
-              <path class="diagram-flow" d="M75 150 C 130 130, 170 118, 240 110 S 360 122, 405 135" />
-              <path class="diagram-pulse" d="M75 150 C 130 130, 170 118, 240 110 S 360 122, 405 135" />
+          <rect class="diagram-monolith" x="50" y="150" width="50" height="70" rx="4"></rect>
+          <circle class="diagram-orb n1" cx="75" cy="140"></circle>
+          <text class="diagram-label" x="75" y="243" text-anchor="middle">Plan</text>
 
-              <rect class="diagram-monolith" x="50" y="150" width="50" height="70" rx="4"></rect>
-              <circle class="diagram-orb n1" cx="75" cy="140"></circle>
-              <text class="diagram-label" x="75" y="243" text-anchor="middle">Plan</text>
+          <rect class="diagram-monolith is-accent" x="215" y="110" width="50" height="110" rx="4"></rect>
+          <circle class="diagram-orb n2" cx="240" cy="100"></circle>
+          <text class="diagram-label" x="240" y="243" text-anchor="middle">Execute</text>
 
-              <rect class="diagram-monolith is-accent" x="215" y="110" width="50" height="110" rx="4"></rect>
-              <circle class="diagram-orb n2" cx="240" cy="100"></circle>
-              <text class="diagram-label" x="240" y="243" text-anchor="middle">Execute</text>
-
-              <rect class="diagram-monolith" x="380" y="135" width="50" height="85" rx="4"></rect>
-              <circle class="diagram-orb n3" cx="405" cy="125"></circle>
-              <text class="diagram-label" x="405" y="243" text-anchor="middle">Review</text>
-            </svg>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="on-light">
-        <div class="wrap reveal">
-          <p class="eyebrow">About</p>
-          <h2>Agents, out loud, in a room.</h2>
-          <p class="lede">
-            Most breakthroughs happen alone — in terminals, notebooks, conversations with AI, and
-            late-night debugging sessions. Alamo Agents is where that work becomes a community.
-            Every month, builders gather to demo real systems, compare ideas, challenge
-            assumptions, and leave with better ones.
-          </p>
-        </div>
-      </section>
-
-      <section id="expect">
-        <div class="wrap">
-          <div class="reveal">
-            <p class="eyebrow">What to expect</p>
-            <h2>Show up, build, compare notes.</h2>
-          </div>
-          <div class="grid-3">
-            {
-              pillars.map((p) => (
-                <div class="card reveal">
-                  <h3>{p.title}</h3>
-                  <p>{p.body}</p>
-                </div>
-              ))
-            }
-          </div>
-        </div>
-      </section>
-
-      <section id="join" class="on-light">
-        <div class="wrap reveal">
-          <p class="eyebrow">Join</p>
-          <div class="join-panel">
-            <h2>Become part of the founding community shaping AI engineering in Texas.</h2>
-            {
-              lumaUrl ? (
-                <>
-                  <p class="lede">
-                    We are locking in a San Antonio venue for the inaugural meetup. RSVP below to
-                    save your seat.
-                  </p>
-                  <a class="btn btn-solid" href={lumaUrl}>
-                    RSVP on Luma
-                  </a>
-                </>
-              ) : (
-                <p class="lede">
-                  We are locking in a San Antonio venue and an RSVP link for the inaugural
-                  meetup. Details land here first — check back soon.
-                </p>
-              )
-            }
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="foot">
-      <div class="wrap">
-        <div class="foot-top">
-          <div>
-            <div class="foot-mark">
-              <Image class="mark-icon" src={archMark} alt="" height={22} />
-              <span class="mark-text">Alamo Agents</span>
-            </div>
-            <p>The home for builders creating AI agent systems in Texas.</p>
-          </div>
-          <p class="foot-kicker">Craft. Rigor. Community.</p>
-        </div>
-        <div class="foot-bottom">© 2026 Alamo Agents. San Antonio, Texas.</div>
+          <rect class="diagram-monolith" x="380" y="135" width="50" height="85" rx="4"></rect>
+          <circle class="diagram-orb n3" cx="405" cy="125"></circle>
+          <text class="diagram-label" x="405" y="243" text-anchor="middle">Review</text>
+        </svg>
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <script is:inline>
-      (function () {
-        var toggle = document.getElementById('nav-toggle');
-        var nav = document.getElementById('primary-nav');
-        if (toggle && nav) {
-          var closeNav = function () {
-            nav.classList.remove('is-open');
-            toggle.setAttribute('aria-expanded', 'false');
-          };
+  <section id="about" class="on-light">
+    <div class="wrap reveal">
+      <p class="eyebrow">About</p>
+      <h2>Agents, out loud, in a room.</h2>
+      <p class="lede">
+        Most breakthroughs happen alone — in terminals, notebooks, conversations with AI, and
+        late-night debugging sessions. Alamo Agents is where that work becomes a community. Every
+        month, builders gather to demo real systems, compare ideas, challenge assumptions, and
+        leave with better ones.
+      </p>
+    </div>
+  </section>
 
-          toggle.addEventListener('click', function () {
-            var open = nav.classList.toggle('is-open');
-            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-          });
-
-          nav.querySelectorAll('a').forEach(function (a) {
-            a.addEventListener('click', closeNav);
-          });
-
-          document.addEventListener('click', function (e) {
-            if (!nav.contains(e.target) && !toggle.contains(e.target)) closeNav();
-          });
+  <section id="expect">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">What to expect</p>
+        <h2>Show up, build, compare notes.</h2>
+      </div>
+      <div class="grid-3">
+        {
+          pillars.map((p) => (
+            <div class="card reveal">
+              <h3>{p.title}</h3>
+              <p>{p.body}</p>
+            </div>
+          ))
         }
+      </div>
+    </div>
+  </section>
 
-        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (reduceMotion || !('IntersectionObserver' in window)) return;
-
-        var observer = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
-        );
-
-        document.querySelectorAll('.reveal').forEach(function (el) {
-          el.classList.add('reveal-armed');
-          observer.observe(el);
-        });
-      })();
-    </script>
-  </body>
-</html>
+  <section id="join" class="on-light">
+    <div class="wrap reveal">
+      <p class="eyebrow">Join</p>
+      <div class="join-panel">
+        <h2>Become part of the founding community shaping AI engineering in Texas.</h2>
+        {
+          lumaUrl ? (
+            <>
+              <p class="lede">
+                We are locking in a San Antonio venue for the inaugural meetup. RSVP below to save
+                your seat.
+              </p>
+              <a class="btn btn-solid" href={lumaUrl}>
+                RSVP on Luma
+              </a>
+            </>
+          ) : (
+            <p class="lede">
+              We are locking in a San Antonio venue and an RSVP link for the inaugural meetup.
+              Details land here first — check back soon.
+            </p>
+          )
+        }
+      </div>
+    </div>
+  </section>
+</Layout>
