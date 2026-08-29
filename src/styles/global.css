@@ -436,6 +436,25 @@ section h2 {
   border: none;
 }
 
+.embed-fallback {
+  padding: 14px 20px;
+  background: rgba(248, 248, 245, 0.04);
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+
+.embed-fallback a {
+  color: var(--brass);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.embed-fallback a:hover {
+  color: var(--ink);
+}
+
 .events-placeholder {
   max-width: 46ch;
 }
