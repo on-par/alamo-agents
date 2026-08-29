@@ -3,7 +3,7 @@
 # src/layouts/Layout.astro. If that script changes, regenerate the hash or the
 # nav will break under CSP. Prefer keeping nav logic in that one inline block.
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-/XevRT6vHO9X1JWaj3X7ERwfFcTwNz75Um9gmx1vQWQ='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-/XevRT6vHO9X1JWaj3X7ERwfFcTwNz75Um9gmx1vQWQ='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://lu.ma https://luma.com https://*.luma.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff

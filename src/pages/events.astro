@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { lumaCalendarEmbedUrl } from '../site-config';
+import { lumaCalendarEmbedUrl, lumaUrl } from '../site-config';
+
+const lumaCalendarUrl = 'https://luma.com/alamo-agents';
 ---
 
 <Layout
@@ -31,6 +33,16 @@ import { lumaCalendarEmbedUrl } from '../site-config';
               allowfullscreen
               title="Alamo Agents events calendar"
             />
+            <noscript>
+              <p class="embed-fallback">
+                Can't see the calendar? <a href={lumaCalendarUrl}>View events on Luma</a>
+                {lumaUrl && <> or <a href={lumaUrl}>RSVP for the next event</a></>}.
+              </p>
+            </noscript>
+            <p class="embed-fallback embed-fallback--visible">
+              <a href={lumaCalendarUrl}>View calendar on Luma</a>
+              {lumaUrl && <> · <a href={lumaUrl}>RSVP for the next event</a></>}
+            </p>
           </div>
         ) : (
           <div class="card events-placeholder">
