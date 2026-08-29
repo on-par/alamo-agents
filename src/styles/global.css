@@ -496,6 +496,52 @@ section h2 {
   line-height: 1.65;
 }
 
+/* Night One / Event Details */
+
+.night-one-panel,
+.event-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.event-meta {
+  margin: 12px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.event-meta div {
+  display: flex;
+  gap: 12px;
+}
+
+.event-meta dt {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-on-light-faint);
+  min-width: 5ch;
+}
+
+.event-meta dd {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--ink-on-light);
+}
+
+.next-event {
+  padding: var(--section-y-sm) 0;
+}
+
+.next-event .event-card h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 0;
+}
+
 /* Join */
 
 .join-panel {
