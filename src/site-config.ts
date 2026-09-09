@@ -1,6 +1,7 @@
-// Single event RSVP link — powers the hero, nav, and homepage Join CTAs.
-// Set once the inaugural meetup has a Luma event page.
-export const lumaUrl = 'https://luma.com/qk7kz065';
+// Single-event RSVP link — powers hero, nav, and homepage Join CTAs.
+// Empty while there is no upcoming event (Night One / Sep 8 is past).
+// Set again when the next gathering has a Luma page.
+export const lumaUrl = '';
 
 // Luma calendar embed src — powers the /events page.
 // Set once a Luma Calendar exists, e.g. "https://lu.ma/embed/calendar/<id>/events".

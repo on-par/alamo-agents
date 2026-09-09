@@ -56,7 +56,7 @@ const pillars = [
 
   <section id="night-one" class="on-light">
     <div class="wrap reveal">
-      <p class="eyebrow">Night One</p>
+      <p class="eyebrow">Night One · Past</p>
       <div class="night-one-panel">
         <h2>Software Factories</h2>
         <dl class="event-meta">
@@ -69,7 +69,9 @@ const pillars = [
             <dd>Zelifcam, 10200 San Pedro Ave, San Antonio</dd>
           </div>
         </dl>
-        <a class="btn btn-solid" href={lumaUrl}>RSVP on Luma</a>
+        <p class="lede" style="margin-top: 1rem; margin-bottom: 0;">
+          Thanks to everyone who showed up for Night One. Next gathering TBA.
+        </p>
       </div>
     </div>
   </section>
@@ -97,12 +99,12 @@ const pillars = [
     <div class="wrap reveal">
       <p class="eyebrow">Join</p>
       <div class="join-panel">
-        <h2>Get in early.</h2>
+        <h2>Next gathering TBA.</h2>
         {
           lumaUrl ? (
             <>
               <p class="lede">
-                Night one is Sep 8 in San Antonio. RSVP below to save your seat.
+                RSVP below to save your seat for the next Alamo Agents night in San Antonio.
               </p>
               <a class="btn btn-solid" href={lumaUrl}>
                 RSVP on Luma
@@ -111,12 +113,17 @@ const pillars = [
           ) : (
             <>
               <p class="lede">
-                We're building this out in San Antonio. Event details land on Luma once they're
-                ready. Want to demo, sponsor, or just say hi before then?
+                Night One landed. Watch the events page for the next date, or get in touch if you
+                want to demo, sponsor, or say hi.
               </p>
-              <a class="btn btn-solid" href="/contact">
-                Get in touch
-              </a>
+              <div class="hero-actions" style="justify-content: flex-start; margin-top: 1rem;">
+                <a class="btn btn-solid" href="/events">
+                  See events
+                </a>
+                <a class="btn" href="/contact">
+                  Get in touch
+                </a>
+              </div>
             </>
           )
         }
