@@ -7,7 +7,7 @@ const lumaCalendarUrl = 'https://luma.com/alamo-agents';
 
 <Layout
   title="Events | Alamo Agents"
-  description="Alamo Agents gathers in San Antonio, Texas. See upcoming gatherings and RSVP on Luma."
+  description="Alamo Agents gathers in San Antonio, Texas. Past nights and the calendar for what's next."
 >
   <section class="page-hero on-light">
     <div class="wrap reveal">
@@ -22,7 +22,7 @@ const lumaCalendarUrl = 'https://luma.com/alamo-agents';
 
   <section class="next-event">
     <div class="wrap reveal">
-      <p class="eyebrow">Up Next</p>
+      <p class="eyebrow">Past</p>
       <div class="event-card">
         <h2>Software Factories</h2>
         <dl class="event-meta">
@@ -35,7 +35,9 @@ const lumaCalendarUrl = 'https://luma.com/alamo-agents';
             <dd>Zelifcam, 10200 San Pedro Ave, San Antonio</dd>
           </div>
         </dl>
-        <a class="btn btn-solid" href={lumaUrl}>RSVP on Luma</a>
+        <p class="lede" style="margin-top: 1rem; margin-bottom: 0;">
+          Night One is done — thanks for coming. Next gathering TBA.
+        </p>
       </div>
     </div>
   </section>
@@ -69,7 +71,7 @@ const lumaCalendarUrl = 'https://luma.com/alamo-agents';
             <h3>Calendar coming soon</h3>
             <p>
               We're setting up our Luma calendar so every gathering lives in one place. Once the
-              inaugural meetup is scheduled, it and every one after it will show up here first.
+              next meetup is scheduled, it and every one after it will show up here first.
             </p>
           </div>
         )
