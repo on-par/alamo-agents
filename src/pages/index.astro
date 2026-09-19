@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import { lumaUrl } from '../site-config';
+import { lumaUrl, nightOneTalkUrl } from '../site-config';
 import heroArch from '../assets/hero-arch.png';
 
 const pillars = [
@@ -54,7 +54,36 @@ const pillars = [
     </div>
   </section>
 
-  <section id="night-one" class="on-light">
+  <section id="up-next" class="on-light">
+    <div class="wrap reveal">
+      <p class="eyebrow">Up next</p>
+      <div class="night-one-panel">
+        <h2>Agents That Live With You</h2>
+        <dl class="event-meta">
+          <div>
+            <dt>When</dt>
+            <dd>Tue Oct 13, 2026 · 6:00–7:30pm CT</dd>
+          </div>
+          <div>
+            <dt>Where</dt>
+            <dd>Zelifcam, 10200 San Pedro Ave, San Antonio</dd>
+          </div>
+        </dl>
+        <p class="lede" style="margin-top: 1rem;">
+          Join us for the next Alamo Agents night in San Antonio.
+        </p>
+        {
+          lumaUrl && (
+            <a class="btn btn-solid" href={lumaUrl} style="margin-top: 0.75rem;">
+              RSVP on Luma
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="night-one">
     <div class="wrap reveal">
       <p class="eyebrow">Night One · Past</p>
       <div class="night-one-panel">
@@ -69,9 +98,12 @@ const pillars = [
             <dd>Zelifcam, 10200 San Pedro Ave, San Antonio</dd>
           </div>
         </dl>
-        <p class="lede" style="margin-top: 1rem; margin-bottom: 0;">
-          Thanks to everyone who showed up for Night One. Next gathering TBA.
+        <p class="lede" style="margin-top: 1rem;">
+          Thanks to everyone who showed up for Night One.
         </p>
+        <a class="btn" href={nightOneTalkUrl} style="margin-top: 0.75rem;">
+          Watch the talk
+        </a>
       </div>
     </div>
   </section>
@@ -99,7 +131,7 @@ const pillars = [
     <div class="wrap reveal">
       <p class="eyebrow">Join</p>
       <div class="join-panel">
-        <h2>Next gathering TBA.</h2>
+        <h2>Agents That Live With You — Oct 13.</h2>
         {
           lumaUrl ? (
             <>
@@ -113,8 +145,8 @@ const pillars = [
           ) : (
             <>
               <p class="lede">
-                Night One landed. Watch the events page for the next date, or get in touch if you
-                want to demo, sponsor, or say hi.
+                Watch the events page for the next date, or get in touch if you want to demo,
+                sponsor, or say hi.
               </p>
               <div class="hero-actions" style="justify-content: flex-start; margin-top: 1rem;">
                 <a class="btn btn-solid" href="/events">
