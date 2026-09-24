@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import { lumaUrl, nightOneTalkUrl } from '../site-config';
+import { lumaUrl } from '../site-config';
 import heroArch from '../assets/hero-arch.png';
 
 const pillars = [
@@ -57,7 +57,7 @@ const pillars = [
   <section id="up-next" class="on-light">
     <div class="wrap reveal">
       <p class="eyebrow">Up next</p>
-      <div class="night-one-panel">
+      <div class="event-card">
         <h2>Agents That Live With You</h2>
         <dl class="event-meta">
           <div>
@@ -79,31 +79,6 @@ const pillars = [
             </a>
           )
         }
-      </div>
-    </div>
-  </section>
-
-  <section id="night-one">
-    <div class="wrap reveal">
-      <p class="eyebrow">Night One · Past</p>
-      <div class="night-one-panel">
-        <h2>Software Factories</h2>
-        <dl class="event-meta">
-          <div>
-            <dt>When</dt>
-            <dd>Tue Sep 8, 2026 · 6:00–7:30pm CT</dd>
-          </div>
-          <div>
-            <dt>Where</dt>
-            <dd>Zelifcam, 10200 San Pedro Ave, San Antonio</dd>
-          </div>
-        </dl>
-        <p class="lede" style="margin-top: 1rem;">
-          Thanks to everyone who showed up for Night One.
-        </p>
-        <a class="btn" href={nightOneTalkUrl} style="margin-top: 0.75rem;">
-          Watch the talk
-        </a>
       </div>
     </div>
   </section>
