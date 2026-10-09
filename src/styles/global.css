@@ -442,8 +442,8 @@ section h2 {
   display: block;
   border: none;
   width: 100%;
-  /* Sized to the calendar list (one or two upcoming events), not a 600px blank. */
-  height: 360px;
+  /* Sized to the calendar list (one upcoming event is ~230px), not a 600px blank. */
+  height: 260px;
   background: var(--obsidian);
   color-scheme: dark;
   transition: opacity 0.3s var(--ease);
