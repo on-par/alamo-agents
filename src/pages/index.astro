@@ -38,8 +38,8 @@ const pillars = [
         <div class="hero-actions">
           {
             lumaUrl && (
-              <a class="btn btn-solid" href={lumaUrl}>
-                RSVP on Luma
+              <a class="btn btn-solid" href="#up-next">
+                See the next event
               </a>
             )
           }
@@ -58,7 +58,8 @@ const pillars = [
     <div class="wrap reveal">
       <p class="eyebrow">Up next</p>
       <div class="event-card">
-        <h2>Agents That Live With You</h2>
+        <div class="event-card-main">
+          <h2>Agents That Live With You</h2>
         <dl class="event-meta">
           <div>
             <dt>When</dt>
@@ -69,16 +70,19 @@ const pillars = [
             <dd>Zelifcam, 10200 San Pedro Ave, San Antonio</dd>
           </div>
         </dl>
-        <p class="lede" style="margin-top: 1rem;">
+        </div>
+        <div class="event-card-aside">
+        <p class="lede">
           Join us for the next Alamo Agents night in San Antonio.
         </p>
         {
           lumaUrl && (
-            <a class="btn btn-solid" href={lumaUrl} style="margin-top: 0.75rem;">
+            <a class="btn btn-solid" href={lumaUrl}>
               RSVP on Luma
             </a>
           )
         }
+        </div>
       </div>
     </div>
   </section>
@@ -102,39 +106,27 @@ const pillars = [
     </div>
   </section>
 
-  <section id="join" class="on-light">
-    <div class="wrap reveal">
-      <p class="eyebrow">Join</p>
-      <div class="join-panel">
-        <h2>Agents That Live With You — Oct 13.</h2>
-        {
-          lumaUrl ? (
-            <>
-              <p class="lede">
-                RSVP below to save your seat for the next Alamo Agents night in San Antonio.
-              </p>
-              <a class="btn btn-solid" href={lumaUrl}>
-                RSVP on Luma
+  {
+    !lumaUrl && (
+      <section id="join" class="on-light">
+        <div class="wrap reveal">
+          <p class="eyebrow">Join</p>
+          <div class="join-panel">
+            <p class="lede">
+              Watch the events page for the next date, or get in touch if you want to demo,
+              sponsor, or say hi.
+            </p>
+            <div class="hero-actions" style="justify-content: flex-start; margin-top: 1rem;">
+              <a class="btn btn-solid" href="/events">
+                See events
               </a>
-            </>
-          ) : (
-            <>
-              <p class="lede">
-                Watch the events page for the next date, or get in touch if you want to demo,
-                sponsor, or say hi.
-              </p>
-              <div class="hero-actions" style="justify-content: flex-start; margin-top: 1rem;">
-                <a class="btn btn-solid" href="/events">
-                  See events
-                </a>
-                <a class="btn" href="/contact">
-                  Get in touch
-                </a>
-              </div>
-            </>
-          )
-        }
-      </div>
-    </div>
-  </section>
+              <a class="btn" href="/contact">
+                Get in touch
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
 </Layout>
