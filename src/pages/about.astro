@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import patrickHeadshot from '../assets/patrick-headshot.jpg';
+import { contactEmail } from '../site-config';
 ---
 
 <Layout
@@ -39,7 +40,7 @@ import patrickHeadshot from '../assets/patrick-headshot.jpg';
         </p>
         <p class="lede">
           Questions, ideas, want to help host? Reach me directly at{' '}
-          <a href="mailto:patrick@onpardev.com">patrick@onpardev.com</a>.
+          <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
         </p>
       </div>
     </div>

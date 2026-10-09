@@ -3,6 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import { lumaCalendarEmbedUrl, lumaUrl, nightOneTalkUrl } from '../site-config';
 
 const lumaCalendarUrl = 'https://luma.com/alamo-agents';
+
+// Luma's dark theme (lt=dark) so the embed matches the obsidian page.
+const lumaEmbedSrc = lumaCalendarEmbedUrl
+  ? `${lumaCalendarEmbedUrl}${lumaCalendarEmbedUrl.includes('?') ? '&' : '?'}lt=dark`
+  : '';
 ---
 
 <Layout
@@ -24,7 +29,8 @@ const lumaCalendarUrl = 'https://luma.com/alamo-agents';
     <div class="wrap reveal">
       <p class="eyebrow">Up next</p>
       <div class="event-card">
-        <h2>Agents That Live With You</h2>
+        <div class="event-card-main">
+          <h2>Agents That Live With You</h2>
         <dl class="event-meta">
           <div>
             <dt>When</dt>
@@ -35,16 +41,19 @@ const lumaCalendarUrl = 'https://luma.com/alamo-agents';
             <dd>Zelifcam, 10200 San Pedro Ave, San Antonio</dd>
           </div>
         </dl>
-        <p class="lede" style="margin-top: 1rem;">
+        </div>
+        <div class="event-card-aside">
+        <p class="lede">
           Join us for the next Alamo Agents night in San Antonio.
         </p>
         {
           lumaUrl && (
-            <a class="btn btn-solid" href={lumaUrl} style="margin-top: 0.75rem;">
+            <a class="btn btn-solid" href={lumaUrl}>
               RSVP on Luma
             </a>
           )
         }
+        </div>
       </div>
     </div>
   </section>
@@ -53,7 +62,8 @@ const lumaCalendarUrl = 'https://luma.com/alamo-agents';
     <div class="wrap reveal">
       <p class="eyebrow">Past</p>
       <div class="event-card">
-        <h2>Software Factories</h2>
+        <div class="event-card-main">
+          <h2>Software Factories</h2>
         <dl class="event-meta">
           <div>
             <dt>When</dt>
@@ -64,12 +74,15 @@ const lumaCalendarUrl = 'https://luma.com/alamo-agents';
             <dd>Zelifcam, 10200 San Pedro Ave, San Antonio</dd>
           </div>
         </dl>
-        <p class="lede" style="margin-top: 1rem;">
+        </div>
+        <div class="event-card-aside">
+        <p class="lede">
           Night One is done — thanks for coming.
         </p>
-        <a class="btn" href={nightOneTalkUrl} style="margin-top: 0.75rem;">
+        <a class="btn" href={nightOneTalkUrl}>
           Watch the talk
         </a>
+        </div>
       </div>
     </div>
   </section>
@@ -78,15 +91,24 @@ const lumaCalendarUrl = 'https://luma.com/alamo-agents';
     <div class="wrap reveal">
       {
         lumaCalendarEmbedUrl ? (
-          <div class="luma-embed">
-            <iframe
-              src={lumaCalendarEmbedUrl}
-              width="100%"
-              height="600"
-              frameborder="0"
-              allowfullscreen
-              title="Alamo Agents events calendar"
-            />
+          <div class="luma-embed" id="luma-embed">
+            <div class="luma-embed-frame">
+              <div class="luma-loading" aria-hidden="true">
+                <span class="luma-spinner"></span>
+                <span>Loading calendar…</span>
+              </div>
+              <iframe
+                id="luma-embed-iframe"
+                src={lumaEmbedSrc}
+                width="100%"
+                height="360"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                title="Alamo Agents events calendar"
+              />
+            </div>
+            <script src="/js/luma-embed.js" is:inline></script>
             <noscript>
               <p class="embed-fallback">
                 Can't see the calendar? <a href={lumaCalendarUrl}>View events on Luma</a>

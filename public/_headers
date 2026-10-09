@@ -1,9 +1,12 @@
 # Security headers for Cloudflare Pages. See issue #3.
 # NOTE: the sha256 in script-src is the hash of the inline mobile-nav script in
 # src/layouts/Layout.astro. If that script changes, regenerate the hash or the
-# nav will break under CSP. Prefer keeping nav logic in that one inline block.
+# nav will break under CSP. Prefer keeping nav logic in that one inline block;
+# other scripts go in public/js/ (allowed by 'self').
+# Cloudflare Web Analytics: script from static.cloudflareinsights.com, beacon to
+# cloudflareinsights.com (and same-origin /cdn-cgi/rum, covered by 'self').
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-/XevRT6vHO9X1JWaj3X7ERwfFcTwNz75Um9gmx1vQWQ='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://lu.ma https://luma.com https://*.luma.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-/XevRT6vHO9X1JWaj3X7ERwfFcTwNz75Um9gmx1vQWQ=' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; frame-src https://lu.ma https://luma.com https://*.luma.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
