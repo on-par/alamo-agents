@@ -18,12 +18,14 @@
 
   --ink: var(--ivory);
   --ink-soft: rgba(248, 248, 245, 0.68);
-  --ink-faint: rgba(248, 248, 245, 0.46);
+  /* Small labels: >= 4.5:1 on their backgrounds (6.42:1 on obsidian). */
+  --ink-faint: rgba(248, 248, 245, 0.58);
   --line: rgba(248, 248, 245, 0.12);
 
   --ink-on-light: var(--obsidian);
   --ink-on-light-soft: rgba(17, 19, 21, 0.64);
-  --ink-on-light-faint: rgba(17, 19, 21, 0.42);
+  /* 5.10:1 on ivory, 5.21:1 on white. */
+  --ink-on-light-faint: rgba(17, 19, 21, 0.62);
 
   --font-serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
   --font-sans: 'Inter', -apple-system, 'system-ui', 'Segoe UI', sans-serif;
@@ -148,9 +150,8 @@ header.site-head {
   top: 0;
   z-index: 40;
   padding: 22px 0;
-  background: rgba(17, 19, 21, 0.86);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  /* Fully opaque: content must not show through the sticky header. */
+  background: var(--obsidian);
   border-bottom: 1px solid var(--line);
 }
 
@@ -243,6 +244,20 @@ nav.nav a.nav-cta:hover {
   width: 16px;
   height: 1px;
   background: var(--ink);
+  transition: transform 0.25s var(--ease), opacity 0.2s var(--ease);
+}
+
+/* Open state: the three bars become an X (driven by aria-expanded, set by the nav script). */
+.nav-toggle[aria-expanded='true'] span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded='true'] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded='true'] span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 @media (max-width: 720px) {
@@ -273,7 +288,7 @@ nav.nav a.nav-cta:hover {
   }
 
   nav.nav.is-open {
-    max-height: 320px;
+    max-height: 400px;
   }
 
   nav.nav a {
@@ -282,7 +297,10 @@ nav.nav a.nav-cta:hover {
   }
 
   nav.nav a.nav-cta {
-    border-radius: 0;
+    margin: 16px clamp(20px, 5vw, 48px) 20px;
+    padding: 14px 20px;
+    border-top: 0;
+    border-radius: var(--radius-sm);
     text-align: center;
   }
 }
@@ -324,7 +342,7 @@ nav.nav a.nav-cta:hover {
   font-size: 1.14rem;
   line-height: 1.7;
   color: var(--ink-soft);
-  max-width: 62ch;
+  max-width: 70ch;
 }
 
 .on-light .lede {
@@ -692,4 +710,75 @@ footer.foot .foot-bottom {
   border-top: 1px solid var(--line);
   font-size: 0.8rem;
   color: var(--ink-faint);
+}
+
+/* Home closing CTA */
+
+.closing-cta {
+  text-align: center;
+  padding: var(--section-y-sm) 0;
+}
+
+.closing-cta .wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.closing-cta h2 {
+  margin: 0;
+  max-width: none;
+}
+
+/* Contact: two columns on desktop */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+}
+
+@media (min-width: 860px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.contact-grid .card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-grid .card p {
+  margin-bottom: 24px;
+}
+
+.contact-grid .card .btn {
+  margin-top: auto;
+}
+
+.contact-grid .card .event-meta {
+  margin: 0 0 24px;
+}
+
+.contact-grid .card .event-meta dt {
+  color: var(--ink-on-light-faint);
+}
+
+.contact-grid .card .event-meta dd {
+  color: var(--ink-on-light);
+}
+
+.section-intro {
+  margin-bottom: 32px;
+}
+
+.section-intro h2 {
+  margin-bottom: 0.2em;
+}
+
+.section-intro p {
+  margin: 0;
 }
