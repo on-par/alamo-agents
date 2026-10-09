@@ -20,20 +20,36 @@ import { contactEmail } from '../site-config';
 
   <section>
     <div class="wrap reveal">
-      <div class="card contact-card">
-        <h3>Email us</h3>
-        <p>We read every message and reply as soon as we can.</p>
-        <a class="btn btn-solid" href={`mailto:${contactEmail}`}>{contactEmail}</a>
+      <div class="contact-grid">
+        <div class="card contact-card">
+          <h3>Email us</h3>
+          <p>We read every message and reply as soon as we can.</p>
+          <a class="btn btn-solid" href={`mailto:${contactEmail}`}>{contactEmail}</a>
+        </div>
+        <div class="card">
+          <h3>Next meetup</h3>
+          <dl class="event-meta">
+            <div>
+              <dt>What</dt>
+              <dd>Agents That Live With You</dd>
+            </div>
+            <div>
+              <dt>When</dt>
+              <dd>Tue Oct 13, 2026 · 6:00–7:30pm CT</dd>
+            </div>
+            <div>
+              <dt>Where</dt>
+              <dd>Zelifcam, 10200 San Pedro Ave, San Antonio</dd>
+            </div>
+          </dl>
+          <a class="btn" href="/events">See events</a>
+        </div>
       </div>
     </div>
   </section>
 </Layout>
 
 <style>
-  .contact-card {
-    max-width: 46ch;
-  }
-
   .contact-card p {
     margin-bottom: 24px;
   }

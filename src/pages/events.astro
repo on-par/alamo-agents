@@ -91,6 +91,12 @@ const lumaEmbedSrc = lumaCalendarEmbedUrl
     <div class="wrap reveal">
       {
         lumaCalendarEmbedUrl ? (
+          <>
+          <div class="section-intro">
+            <p class="eyebrow">All events</p>
+            <h2>Calendar</h2>
+            <p class="lede">Every upcoming Alamo Agents event, from our Luma calendar.</p>
+          </div>
           <div class="luma-embed" id="luma-embed">
             <div class="luma-embed-frame">
               <div class="luma-loading" aria-hidden="true">
@@ -120,6 +126,7 @@ const lumaEmbedSrc = lumaCalendarEmbedUrl
               {lumaUrl && <> · <a href={lumaUrl}>RSVP for the next event</a></>}
             </p>
           </div>
+          </>
         ) : (
           <div class="card events-placeholder">
             <h3>Calendar coming soon</h3>

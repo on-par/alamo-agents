@@ -107,6 +107,19 @@ const pillars = [
   </section>
 
   {
+    lumaUrl && (
+      <section class="closing-cta on-light" aria-labelledby="closing-cta-title">
+        <div class="wrap reveal">
+          <h2 id="closing-cta-title">Join us at the next meetup.</h2>
+          <a class="btn btn-solid" href={lumaUrl}>
+            RSVP on Luma
+          </a>
+        </div>
+      </section>
+    )
+  }
+
+  {
     !lumaUrl && (
       <section id="join" class="on-light">
         <div class="wrap reveal">

@@ -24,10 +24,12 @@ import { contactEmail } from '../site-config';
 
   <section>
     <div class="wrap founder-wrap reveal">
-      <Image class="founder-avatar" src={patrickHeadshot} alt="Patrick Robinson" width={176} height={176} />
-      <div>
+      <div class="founder-head">
+        <Image class="founder-avatar" src={patrickHeadshot} alt="Patrick Robinson" width={176} height={176} />
         <p class="eyebrow">Who's behind this</p>
         <h2>I'm building this to get people in a room, not just a feed.</h2>
+      </div>
+      <div class="founder-body">
         <p class="lede">
           I'm Patrick, a software consultant at{' '}
           <a href="https://leantechniques.com" target="_blank" rel="noopener">Lean TECHniques</a>
@@ -48,17 +50,31 @@ import { contactEmail } from '../site-config';
 </Layout>
 
 <style>
+  /* Two columns on desktop: avatar + heading | body copy (readable ~70ch). */
   .founder-wrap {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 40px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
     align-items: start;
   }
 
-  @media (max-width: 640px) {
+  @media (min-width: 900px) {
     .founder-wrap {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 64px;
     }
+
+    .founder-body {
+      padding-top: 104px;
+    }
+  }
+
+  .founder-head h2 {
+    max-width: 16ch;
+  }
+
+  .founder-avatar {
+    margin-bottom: 24px;
   }
 
   .founder-avatar {
