@@ -523,13 +523,24 @@ section h2 {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--ink-on-light-faint);
+  /* Default: dark sections (e.g. /events "Up next"). ink-soft on obsidian = 8.44:1 */
+  color: var(--ink-soft);
   min-width: 5ch;
 }
 
 .event-meta dd {
   margin: 0;
   font-size: 1rem;
+  /* ivory on obsidian = 17.5:1 */
+  color: var(--ink);
+}
+
+/* Light sections: obsidian on ivory = 17.5:1; labels 5.46:1 */
+.on-light .event-meta dt {
+  color: var(--ink-on-light-soft);
+}
+
+.on-light .event-meta dd {
   color: var(--ink-on-light);
 }
 
