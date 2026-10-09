@@ -782,3 +782,9 @@ footer.foot .foot-bottom {
 .section-intro p {
   margin: 0;
 }
+
+/* Outline buttons inside white cards on dark sections: dark text (17.5:1 on white). */
+.card .btn:not(.btn-solid) {
+  color: var(--ink-on-light);
+  border-color: rgba(17, 19, 21, 0.14);
+}
