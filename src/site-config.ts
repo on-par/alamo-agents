@@ -1,5 +1,5 @@
 // Single-event RSVP link — powers hero, nav, and homepage Join CTAs.
-export const lumaUrl = 'https://luma.com/g3ubh45a';
+export const lumaUrl = 'https://luma.com/sg6my481';
 
 // Luma calendar embed src — powers the /events page.
 // Set once a Luma Calendar exists, e.g. "https://lu.ma/embed/calendar/<id>/events".
@@ -10,3 +10,6 @@ export const contactEmail = 'hello@alamoagents.org';
 
 // Night One talk recording (Software Factories, Sep 8 2026).
 export const nightOneTalkUrl = 'https://youtu.be/angmcGqg-C8';
+
+export const nightTwoTalkUrl = 'https://youtu.be/wrT9GCKIWzw';
+export const nightTwoRecapUrl = 'https://patrickarobinson.com/blog/agents-that-live-with-you/';

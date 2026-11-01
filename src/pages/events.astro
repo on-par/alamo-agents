@@ -1,6 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { lumaCalendarEmbedUrl, lumaUrl, nightOneTalkUrl } from '../site-config';
+import {
+  lumaCalendarEmbedUrl,
+  lumaUrl,
+  nightOneTalkUrl,
+  nightTwoRecapUrl,
+  nightTwoTalkUrl,
+} from '../site-config';
 
 const lumaCalendarUrl = 'https://luma.com/alamo-agents';
 
@@ -30,11 +36,11 @@ const lumaEmbedSrc = lumaCalendarEmbedUrl
       <p class="eyebrow">Up next</p>
       <div class="event-card">
         <div class="event-card-main">
-          <h2>Agents That Live With You</h2>
+          <h2>Alamo Agents Builders Night</h2>
         <dl class="event-meta">
           <div>
             <dt>When</dt>
-            <dd>Tue Oct 13, 2026 · 6:00–7:30pm CT</dd>
+            <dd>Tue Nov 10, 2026 · 6:00–7:30pm CT</dd>
           </div>
           <div>
             <dt>Where</dt>
@@ -44,7 +50,7 @@ const lumaEmbedSrc = lumaCalendarEmbedUrl
         </div>
         <div class="event-card-aside">
         <p class="lede">
-          Join us for the next Alamo Agents night in San Antonio.
+          An agent buildathon: pitch ideas on a whiteboard, vote on one, then build it together.
         </p>
         {
           lumaUrl && (
@@ -62,6 +68,32 @@ const lumaEmbedSrc = lumaCalendarEmbedUrl
     <div class="wrap reveal">
       <p class="eyebrow">Past</p>
       <div class="event-card">
+        <div class="event-card-main">
+          <h2>Agents That Live With You</h2>
+        <dl class="event-meta">
+          <div>
+            <dt>When</dt>
+            <dd>Tue Oct 13, 2026 · 6:00–7:30pm CT</dd>
+          </div>
+          <div>
+            <dt>Where</dt>
+            <dd>Zelifcam, 10200 San Pedro Ave, San Antonio</dd>
+          </div>
+        </dl>
+        </div>
+        <div class="event-card-aside">
+        <p class="lede">
+          Night Two: Hermes setup and real workflows. The video is live.
+        </p>
+        <a class="btn" href={nightTwoTalkUrl}>
+          Watch the talk
+        </a>
+        <a class="btn" href={nightTwoRecapUrl}>
+          Read the recap
+        </a>
+        </div>
+      </div>
+      <div class="event-card" style="margin-top: 24px;">
         <div class="event-card-main">
           <h2>Software Factories</h2>
         <dl class="event-meta">
