@@ -10,6 +10,7 @@ export const contactEmail = 'hello@alamoagents.org';
 
 // Night One talk recording (Software Factories, Sep 8 2026).
 export const nightOneTalkUrl = 'https://youtu.be/angmcGqg-C8';
+export const nightOneRecapUrl = 'https://patrickarobinson.com/blog/software-factories/';
 
 export const nightTwoTalkUrl = 'https://youtu.be/wrT9GCKIWzw';
 export const nightTwoRecapUrl = 'https://patrickarobinson.com/blog/agents-that-live-with-you/';
